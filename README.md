@@ -43,7 +43,37 @@ In order to consume endpoints that require a signed in user (administrator or no
 * Clone the repository.
 * Execute <code>bundle install</code> to install the required gems.
 * Execute <code>rake db:setup</code> to setup the database.
+* Execute <code>rake db:load\_demo\_data</code> to load some demo data to the application.
 * Execute <code>rails server</code> to start the application on the default port.
+
+If you loaded the demo data, the following users are available:
+
+<table>
+	<thead>
+		<tr>
+			<th>Email</th>
+			<th>Password</th>
+			<th>Administrator</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>administrator@lofocats.com</td>
+			<td>administrator</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>user@lofocats.com</td>
+			<td>user123456</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>another_user@lofocats.com</td>
+			<td>user123456</td>
+			<td>No</td>
+		</tr>
+	</tbody>
+</table>
 
 # Testing
 
