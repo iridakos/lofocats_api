@@ -44,9 +44,14 @@ class Api::V1::UsersController < ApplicationController
   # DELETE '/api/users/:id'
   def destroy
     authorize! :destroy, @user
-    @user.destroy
 
-    head 204
+    if current_user != @user
+      @user.destroy
+
+      head 204
+    else
+      head 422
+    end
   end
 
   private

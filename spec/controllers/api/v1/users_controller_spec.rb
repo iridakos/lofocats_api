@@ -149,6 +149,19 @@ describe Api::V1::UsersController do
       it { should respond_with 204 }
     end
 
+    context 'when user tries to delete his account' do
+      let(:user) { FactoryGirl.create :user }
+
+      before(:each) do
+        expect(controller).to receive(:authorize!).with(:destroy, user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        delete :destroy, id: user.id
+      end
+
+      it { should respond_with 422 }
+    end
+
     context 'for non-existent user' do
       before(:each) do
         expect(controller).not_to receive(:authorize!)
