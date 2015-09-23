@@ -55,6 +55,10 @@ describe Ability do
       expect(subject.can?(:read, User.new(:id => 2))).to be false
     end
 
+    it 'should not be able to show all users' do
+      expect(subject.can?(:read_all, User)).to be false
+    end
+
     it 'should not be able to create users' do
       expect(subject.can?(:create, User)).to be false
     end
@@ -91,6 +95,10 @@ describe Ability do
 
     it 'should not be able to delete cat entries' do
       expect(subject.can?(:delete, FactoryGirl.build(:cat_entry))).to be false
+    end
+
+    it 'should not be able to show all users' do
+      expect(subject.can?(:read_all, User)).to be false
     end
 
     it 'should not be able to show users' do

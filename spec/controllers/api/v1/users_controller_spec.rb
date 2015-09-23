@@ -6,7 +6,7 @@ describe Api::V1::UsersController do
       FactoryGirl.create(:user)
       FactoryGirl.create(:admin_user)
       
-      expect(controller).to receive(:authorize!).with(:read, User)
+      expect(controller).to receive(:authorize!).with(:read_all, User)
 
       get :index
     end

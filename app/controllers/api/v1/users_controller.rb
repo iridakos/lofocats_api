@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
 
   # GET '/api/users'
   def index
-    authorize! :read, User
+    authorize! :read_all, User
 
     render :json => User.all
   end
