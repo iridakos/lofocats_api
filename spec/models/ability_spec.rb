@@ -47,16 +47,24 @@ describe Ability do
       expect(subject.can?(:destroy, FactoryGirl.build(:cat_entry, :user => other_user))).to be false
     end
 
-    it 'should not be able to show users' do
-      expect(subject.can?(:read, User)).to be false
+    it 'should be able to show own profile' do
+      expect(subject.can?(:read, subject)).to be false
+    end
+
+    it 'should not be able to show other users' do
+      expect(subject.can?(:read, User.new(:id => 2))).to be false
     end
 
     it 'should not be able to create users' do
       expect(subject.can?(:create, User)).to be false
     end
 
-    it 'should not be able to update users' do
-      expect(subject.can?(:update, User)).to be false
+    it 'should be able to update own profile' do
+      expect(subject.can?(:update, subject)).to be false
+    end
+
+    it 'should not be able to update other users' do
+      expect(subject.can?(:update, User.new(:id => 3))).to be false
     end
 
     it 'should not be able to destroy users' do
