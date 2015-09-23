@@ -17,7 +17,7 @@ class CatEntry < ActiveRecord::Base
   ### Scopes ###
 
   # Default scope excludes resolved entries
-  default_scope -> { where(:resolved => false) }
+  default_scope -> { where(:resolved => [false, nil]) }
 
   scope :found, -> { where(:entry_type => :found) }
   scope :lost, -> { where(:entry_type => :lost) }
