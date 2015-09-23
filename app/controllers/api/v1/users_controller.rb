@@ -60,6 +60,7 @@ class Api::V1::UsersController < ApplicationController
   # Define allowed parameters
   def user_params
     params.require(:user).permit(:email,
+                                 :admin,
                                  :password,
                                  :password_confirmation)
   end
