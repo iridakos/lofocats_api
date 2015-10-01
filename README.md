@@ -1,5 +1,5 @@
 # LofoCats API
-LofoCats API is a simple API built with Ruby on Rails created for demo purposes.
+LofoCats API is a simple API built with Ruby on Rails created for demo purposes. (There's also a simple application consuming it, built with Rails: [LofoCats UI](https://github.com/iridakos/lofocats_ui)).
 
 # Functionality
 The API provides endpoints for interacting with a registry of lost and found cats.
