@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Rails
-gem 'rails', '4.2.4'
+gem 'rails', '~>4.2'
 # Database
 gem 'sqlite3'
 
