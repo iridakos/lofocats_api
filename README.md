@@ -41,10 +41,8 @@ In order to consume endpoints that require a signed in user (administrator or no
 # Setting up the application
 
 * Clone the repository.
-* Execute <code>bundle install</code> to install the required gems.
-* Execute <code>rake db:setup</code> to setup the database.
-* Execute <code>rake db:load\_demo\_data</code> to load some demo data to the application.
-* Execute <code>rails server</code> to start the application on the default port.
+* Execute `docker-compose up` to setup the environment.
+* Execute `docker-compose run --rm api rake db:load_demo_data` to load some demo data to the application.
 
 If you loaded the demo data, the following users are available:
 
@@ -79,8 +77,7 @@ If you loaded the demo data, the following users are available:
 
 The application contains RSpec specs. To run the tests:
 
-* Execute <code>rake db:test:prepare</code>
-* Execute <code>rspec</code>
+* Execute `docker-compose run --rm api sh -c 'bundle install --with test && rake db:test:prepare && rspec'`
 
 # TODO
 

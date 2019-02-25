@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150920192224) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authentication_tokens", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.string   "token",      null: false
@@ -21,9 +24,9 @@ ActiveRecord::Schema.define(version: 20150920192224) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "authentication_tokens", ["expires_at"], name: "index_authentication_tokens_on_expires_at"
-  add_index "authentication_tokens", ["token"], name: "index_authentication_tokens_on_token", unique: true
-  add_index "authentication_tokens", ["user_id"], name: "index_authentication_tokens_on_user_id"
+  add_index "authentication_tokens", ["expires_at"], name: "index_authentication_tokens_on_expires_at", using: :btree
+  add_index "authentication_tokens", ["token"], name: "index_authentication_tokens_on_token", unique: true, using: :btree
+  add_index "authentication_tokens", ["user_id"], name: "index_authentication_tokens_on_user_id", using: :btree
 
   create_table "cat_entries", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -42,6 +45,12 @@ ActiveRecord::Schema.define(version: 20150920192224) do
     t.datetime "updated_at",    null: false
   end
 
+  add_index "cat_entries", ["chip"], name: "index_cat_entries_on_chip", using: :btree
+  add_index "cat_entries", ["entry_type"], name: "index_cat_entries_on_entry_type", using: :btree
+  add_index "cat_entries", ["event_date"], name: "index_cat_entries_on_event_date", using: :btree
+  add_index "cat_entries", ["resolved"], name: "index_cat_entries_on_resolved", using: :btree
+  add_index "cat_entries", ["user_id"], name: "index_cat_entries_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",           default: "", null: false
     t.string   "password_digest", default: "", null: false
@@ -50,6 +59,6 @@ ActiveRecord::Schema.define(version: 20150920192224) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
