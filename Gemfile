@@ -24,3 +24,5 @@ group :test do
   # To better handle time sensitive tests
   gem 'timecop'
 end
+
+gem 'rails_12factor'
