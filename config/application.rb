@@ -16,5 +16,7 @@ module LofoCatsApi
     config.active_record.raise_in_transactional_callbacks = true
 
     config.autoload_paths << Rails.root.join('lib') << Rails.root.join('lib/validators')
+
+    config.middleware.insert_after Rails::Rack::Logger, HealthCheck::MiddlewareHealthcheck
   end
 end

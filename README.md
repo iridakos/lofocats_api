@@ -34,6 +34,20 @@ The API provides endpoints for interacting with a registry of lost and found cat
 
 <code>DELETE /api/cat_entries/:id</code> Deletes a cat entry. Administrators can delete all entries, signed in users can delete only their own entries. Guests can't delete any entry.
 
+### Monitoring
+
+<code>GET /api/health</code> Returns HTTP 200 and "OK" if the app is running. Else HTTP 500.
+
+<code>GET /api/health/database</code> Returns HTTP 200 and "OK" if the current migration level can be read from the database. Else HTTP 500.
+
+<code>GET /api/health/migration</code> Returns HTTP 200 and "OK" if database migration level matches db/migrations. Else HTTP 500.
+
+<code>GET /api/health/cache</code> Returns HTTP 200 and "OK" if a value can be written to the cache. Else HTTP 500.
+
+<code>GET /api/health/all</code> Returns HTTP 200 and "OK" if all checks passes. Else HTTP 500.
+
+See [`health_check`](https://github.com/ianheggie/health_check) for more details.
+
 # Authentication & Authorization
 
 In order to consume endpoints that require a signed in user (administrator or not) you must first obtain an authentication token by posting to the respective sessions endpoint described above. You have to use this token as the <code>Authorization</code> header of your requests to the desired endpoints.
