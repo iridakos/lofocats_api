@@ -93,7 +93,7 @@ If you loaded the demo data, the following users are available:
 
 The application contains RSpec specs. To run the tests:
 
-* Execute `docker-compose run --rm api sh -c 'bundle install --with test && rake db:test:prepare && rspec'`
+* Execute `docker-compose -f docker-compose.test.yml -p lofocats_api_test up`
 
 # TODO
 
