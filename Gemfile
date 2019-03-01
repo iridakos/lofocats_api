@@ -16,7 +16,7 @@ gem 'cancan'
 
 group :test do
   # Rspec
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '>= 3.4.4', '< 4.0'
   # FactoryGirl factories
   gem "factory_girl_rails"
   # Use should matchers
