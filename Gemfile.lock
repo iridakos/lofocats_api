@@ -67,6 +67,9 @@ GEM
     nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
+    prometheus-client (0.9.0)
+      quantile (~> 0.2.1)
+    quantile (0.2.1)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -142,6 +145,7 @@ DEPENDENCIES
   factory_girl_rails
   health_check
   pg (~> 0.18)
+  prometheus-client
   rails (~> 4.2)
   rails_12factor
   rspec-rails (~> 3.0)

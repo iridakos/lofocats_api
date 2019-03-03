@@ -48,6 +48,8 @@ The API provides endpoints for interacting with a registry of lost and found cat
 
 See [`health_check`](https://github.com/ianheggie/health_check) for more details.
 
+<code>GET /api/metrics</code> Returns Prometheus-formatted application metrics.
+
 # Authentication & Authorization
 
 In order to consume endpoints that require a signed in user (administrator or not) you must first obtain an authentication token by posting to the respective sessions endpoint described above. You have to use this token as the <code>Authorization</code> header of your requests to the desired endpoints.

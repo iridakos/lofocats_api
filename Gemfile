@@ -27,3 +27,4 @@ end
 
 gem 'rails_12factor'
 gem 'health_check'
+gem 'prometheus-client'
