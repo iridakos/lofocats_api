@@ -14,6 +14,15 @@ gem 'active_model_serializers'
 # Used for API authorization
 gem 'cancan'
 
+# Send logs to SDTOUT
+gem 'rails_12factor'
+
+# Health check endpoint
+gem 'health_check'
+
+# Collect and export monitoring metrics
+gem 'prometheus-client'
+
 group :test do
   # Rspec
   gem 'rspec-rails', '>= 3.4.4', '< 4.0'
@@ -24,7 +33,3 @@ group :test do
   # To better handle time sensitive tests
   gem 'timecop'
 end
-
-gem 'rails_12factor'
-gem 'health_check'
-gem 'prometheus-client'
