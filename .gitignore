@@ -1,9 +1,6 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore PostgreSQL data.
-/db/postgres/data
-
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep

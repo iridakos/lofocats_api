@@ -28,6 +28,9 @@ services:
   db:
     image: postgres:9.6-alpine
     volumes:
-      - ./db/postgres/data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=lofocats
+
+volumes:
+  postgres-data:
