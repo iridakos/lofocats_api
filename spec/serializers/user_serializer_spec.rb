@@ -6,6 +6,6 @@ describe UserSerializer do
   subject { UserSerializer.new(user).to_json }
 
   it 'should serialize the correct attributes' do
-    expect(subject).to eq '{"id":1,"email":"test@lofocat.dev","admin":null}'
+    expect(subject).to match(/^{"id":\d+,"email":"test@lofocat.dev","admin":null}$/)
   end
 end
